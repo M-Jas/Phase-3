@@ -1,0 +1,25 @@
+<h1>My Articles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %>
+    <tr>
+      <td><%= link_to article.title, article_path(article), class: 'article_title' %></td>
+      <!-- The class is not needed  -->
+      <td><%= article.body %></td>
+      <td><%= link_to 'Edit', edit_article_path(article) %></td>
+
+
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Create New Article", new_article_path, class: 'new_article' %>

@@ -1,0 +1,9 @@
+<h1><%= @article.title %></h1>
+  <p><%= @article.body %></p>
+
+
+
+<!-- This is setup for no turbo links -->
+<%= link_to "Destroy",  article_path(@article), method: :delete,  data: { no_turbolink: true } %></br>
+<%= link_to "Edit", edit_article_path(@article)  %></br>
+<%= link_to "Back to Your Articles",  articles_path %>
